@@ -2,13 +2,13 @@
 h1{
     max-width: 1200px;
     margin: auto;
+    padding: 10px;
 }
 
-div.cocktail-list{
+cocktail-list{
     max-width: 1200px;
     margin: auto;
     display: flex;
+    padding: 20px;
     background-color: aliceblue;
-   
-    
 }
