@@ -23,7 +23,7 @@ document.addEventListener ("DOMContentLoaded", function() {
         const cocktailIngredientsP = document.createElement ("p")
         let ingredientsList = "";  //this creates a list
        
-       //ingredients 1 through 15 are properties in data
+       //loop through ingredients
        for (let i = 1; i <= 15; i++) { //we use a for loop
         const ingredient = individualCocktail["strIngredient" + i]; //retrieve the ingredient value from the current property using bracket notation
         if (ingredient) {
@@ -42,7 +42,7 @@ document.addEventListener ("DOMContentLoaded", function() {
     const cocktailMeasuresP = document.createElement ("p")
     let measureList = "";  
 
-    //for loop to itterate over measures
+    //loop through measures
     for (let i = 1; i <= 15; i++) { 
         const measure = individualCocktail["strMeasure" + i]; 
         if (measure) {
@@ -60,8 +60,31 @@ document.addEventListener ("DOMContentLoaded", function() {
     }
     const cocktailInstructionsP = document.createElement("p")
     cocktailInstructionsP.textContent = individualCocktail.strInstructions
+    
+    // Create star rating
+    const ratingDiv = document.createElement("div");
+    ratingDiv.classList.add("rating");
+
+    const ratingValue = 4; // Set the rating value here
+    for (let i = 1; i <= 5; i++) {
+        const starSpan = document.createElement("span");
+        starSpan.textContent = i <= ratingValue ? "★" : "☆"; // Use ★ for filled star and ☆ for empty star
+        starSpan.setAttribute("data-rating", i); // Set data-rating attribute to the value of the star
+        starSpan.classList.add("star")
+        ratingDiv.appendChild(starSpan);
+
+        // Add event listener to each star
+        starSpan.addEventListener("click", function() {
+            const clickedRating = parseInt(this.getAttribute("data-rating"));
+            console.log("User clicked star rating: " + clickedRating);
+            
+
+
+            
+        });
+    }
       
-       cocktailDiv.append(cocktailImg,cocktailNameP,cocktailGlassP,cocktailIngredientsP,cocktailMeasuresP,cocktailInstructionsP)
+       cocktailDiv.append(cocktailImg,cocktailNameP,cocktailGlassP,cocktailIngredientsP,cocktailMeasuresP,cocktailInstructionsP,ratingDiv)
        cocktailContainerDiv.appendChild(cocktailDiv);
 
     });
