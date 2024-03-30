@@ -39,10 +39,29 @@ document.addEventListener ("DOMContentLoaded", function() {
 
        
     }
+    const cocktailMeasuresP = document.createElement ("p")
+    let measureList = "";  
+
+    //for loop to itterate over measures
+    for (let i = 1; i <= 15; i++) { 
+        const measure = individualCocktail["strMeasure" + i]; 
+        if (measure) {
+            measureList += measure + ", ''"; 
+        } else {
+          
+            break;
+        }
+
+        measureList = measureList.slice(0, -2);
+
+        cocktailMeasuresP.textContent = "Measure: " + measureList; 
+
+       
+    }
     const cocktailInstructionsP = document.createElement("p")
     cocktailInstructionsP.textContent = individualCocktail.strInstructions
       
-       cocktailDiv.append(cocktailImg,cocktailNameP,cocktailGlassP,cocktailIngredientsP,cocktailInstructionsP)
+       cocktailDiv.append(cocktailImg,cocktailNameP,cocktailGlassP,cocktailIngredientsP,cocktailMeasuresP,cocktailInstructionsP)
        cocktailContainerDiv.appendChild(cocktailDiv);
 
     });
