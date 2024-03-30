@@ -11,9 +11,11 @@ document.addEventListener ("DOMContentLoaded", function() {
         
         const cocktailImg = document.createElement ("img")
         cocktailImg.src = individualCocktail.strDrinkThumb
+        cocktailImg.classList.add("cocktail-image"); // Add a class to the image for sizes in css
 
         const cocktailNameP = document.createElement ("p")
         cocktailNameP.textContent = individualCocktail.strDrink
+        cocktailNameP.classList.add("name-size"); // Add a class to the image for sizes in css
 
         const cocktailGlassP = document.createElement ("p")
         cocktailGlassP.textContent =individualCocktail.strGlass
@@ -35,9 +37,12 @@ document.addEventListener ("DOMContentLoaded", function() {
 
         cocktailIngredientsP.textContent = "Ingredients: " + ingredientsList; //set the text content of cocktailIngredientsP to "Ingredients: " followed by the ingredientsList.
 
+       
     }
+    const cocktailInstructionsP = document.createElement("p")
+    cocktailInstructionsP.textContent = individualCocktail.strInstructions
       
-       cocktailDiv.append(cocktailImg,cocktailNameP,cocktailGlassP,cocktailIngredientsP)
+       cocktailDiv.append(cocktailImg,cocktailNameP,cocktailGlassP,cocktailIngredientsP,cocktailInstructionsP)
        cocktailContainerDiv.appendChild(cocktailDiv);
 
     });

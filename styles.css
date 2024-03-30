@@ -10,6 +10,18 @@ h1{
     margin: auto;
     display: flex;
     padding: 20px;
-    background-color: aliceblue;
+    background-: aliceblue;
+    
+  
 
+}
+
+.cocktail-image {
+    width: 200px; /* Set width to 100 pixels */
+    height: 200px; /* Set height to 100 pixels */
+}
+
+.name-size{
+    font-size: x-large;
+    
 }
