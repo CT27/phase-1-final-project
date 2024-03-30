@@ -5,10 +5,11 @@ h1{
     padding: 10px;
 }
 
-cocktail-list{
+.cocktails{
     max-width: 1200px;
     margin: auto;
     display: flex;
     padding: 20px;
     background-color: aliceblue;
+
 }

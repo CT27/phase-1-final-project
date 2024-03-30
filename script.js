@@ -13,7 +13,10 @@ document.addEventListener ("DOMContentLoaded", function() {
         cocktailImg.src = individualCocktail.strDrinkThumb
 
         const cocktailNameP = document.createElement ("p")
-        cocktailNameP.textContent =individualCocktail.strDrink
+        cocktailNameP.textContent = individualCocktail.strDrink
+
+        const cocktailGlassP = document.createElement ("p")
+        cocktailGlassP.textContent =individualCocktail.strGlass
 
         const cocktailIngredientsP = document.createElement ("p")
         let ingredientsList = "";  //this creates a list
@@ -34,7 +37,7 @@ document.addEventListener ("DOMContentLoaded", function() {
 
     }
       
-       cocktailDiv.append(cocktailImg,cocktailNameP,cocktailIngredientsP)
+       cocktailDiv.append(cocktailImg,cocktailNameP,cocktailGlassP,cocktailIngredientsP)
        cocktailContainerDiv.appendChild(cocktailDiv);
 
     });
