@@ -1,1 +1,14 @@
 
+h1{
+    max-width: 1200px;
+    margin: auto;
+}
+
+div.cocktail-list{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    background-color: aliceblue;
+   
+    
+}
