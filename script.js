@@ -22,15 +22,18 @@ document.addEventListener ("DOMContentLoaded", function() {
        for (let i = 1; i <= 15; i++) { //we use a for loop
         const ingredient = individualCocktail["strIngredient" + i]; //retrieve the ingredient value from the current property using bracket notation
         if (ingredient) {
-            ingredientsList += ingredient + ", "; //If the ingredient exists (i.e., it's not null or undefined), we append it to the ingredientsList.
+            ingredientsList += ingredient + ", ''"; //If the ingredient exists (i.e., it's not null or undefined), we append it to the ingredientsList.
+        } else {
+             // If there are no more ingredients, break out of the loop
+            break;
         }
+
         ingredientsList = ingredientsList.slice(0, -2); //After the loop, we remove the last comma and space from the ingredientsList.
 
         cocktailIngredientsP.textContent = "Ingredients: " + ingredientsList; //set the text content of cocktailIngredientsP to "Ingredients: " followed by the ingredientsList.
 
     }
       
-
        cocktailDiv.append(cocktailImg,cocktailNameP,cocktailIngredientsP)
        cocktailContainerDiv.appendChild(cocktailDiv);
 
