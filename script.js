@@ -71,20 +71,21 @@ document.addEventListener("DOMContentLoaded", function() {
                     const clickedRating = parseInt(this.getAttribute("data-rating"));
                     console.log("User clicked star rating: " + clickedRating);
 
-                    // Send rating to the server
-                    fetch('http://localhost:3000/ratings', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                           ratings: individualCocktail.id,
-                            ratings: clickedRating
-                        })
-                    })
-                    .then(res => res.json())
-                    .then(ratings => console.log(ratings))
-                    .catch(error => console.error("Error sending rating to the server:", error)); // Handle any errors
+            //         // Send rating to the server
+            //         fetch('http://localhost:3000/ratings', 
+            //         {
+            //             method: 'POST',
+            //             headers: {
+            //                 'Content-Type': 'application/json'
+            //             },
+            //             body: JSON.stringify({
+            //                cocktailId: individualCocktail.id,
+            //                 ratings: clickedRating
+            //             })
+            //         })
+            //         .then(res => res.json())
+            //         .then(ratings => console.log(ratings))
+            //         .catch(error => console.error("Error sending rating to the server:", error)); // Handle any errors
                 });
             };
             cocktailDiv.append(cocktailImg, cocktailNameP, cocktailGlassP, cocktailIngredientsP, cocktailMeasuresP, cocktailInstructionsP, ratingDiv);
