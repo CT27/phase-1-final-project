@@ -82,12 +82,13 @@ document.addEventListener ("DOMContentLoaded", function() {
             const clickedRating = parseInt(this.getAttribute("data-rating"));
             console.log("User clicked star rating: " + clickedRating);
 
-            
-
-
-
-
-        });
+        // Send rating to the server
+        fetch("http://localhost:3000/ratings",)
+        .then ((res) => res.json())
+        .catch(error => console.error("Fetch error:", error));
+        
+    });
+        ;
     }
 
 
