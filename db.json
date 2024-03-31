@@ -281,8 +281,16 @@
       "strImageAttribution": null,
       "strCreativeCommonsConfirmed": "Yes",
       "dateModified": "2017-09-02 12:29:32"
+    },
+    {
+      "id": "cef7",
+      "cocktailName": "Tequila Sunrise",
+      "cocktailGlass": "Highball glass",
+      "cocktailIngredients": "Tequila, Orange juice, Grenadine",
+      "cocktailMeasures": "2 measures",
+      "cocktailInstructions": "Pour the tequila and orange juice into glass over ice. Add the grenadine, which will sink to the bottom. Stir gently to create the sunrise effect. Garnish and serve.",
+      "cocktailImage": "https://www.thecocktaildb.com/images/media/drink/quqyqp1480879103.jpg"
     }
-
   ],
   "ratings": {
     "1": [

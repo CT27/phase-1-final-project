@@ -93,3 +93,35 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+    document.getElementById('create-cocktail-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // prevent the form from submitting normally
+
+    // collect form data
+    const formData = {
+        cocktailName: document.getElementById('cocktail-name').value,
+        cocktailGlass: document.getElementById('cocktail-glass').value,
+        cocktailIngredients: document.getElementById('cocktail-ingredients').value,
+        cocktailMeasures: document.getElementById('cocktail-measures').value,
+        cocktailInstructions: document.getElementById('cocktail-instructions').value,
+        cocktailImage: document.getElementById('cocktail-image').value
+    };
+
+    // send POST request
+    fetch('http://localhost:3000/drinks', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        // Optionally, you can redirect to another page or show a success message here.
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        // Handle errors here
+    });
+});
