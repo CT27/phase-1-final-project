@@ -23,7 +23,7 @@ document.addEventListener ("DOMContentLoaded", function() {
         const cocktailIngredientsP = document.createElement ("p")
         let ingredientsList = "";  //this creates a list
        
-       //loop through ingredients
+       //ingredients 1 through 15 are properties in data
        for (let i = 1; i <= 15; i++) { //we use a for loop
         const ingredient = individualCocktail["strIngredient" + i]; //retrieve the ingredient value from the current property using bracket notation
         if (ingredient) {
@@ -42,7 +42,7 @@ document.addEventListener ("DOMContentLoaded", function() {
     const cocktailMeasuresP = document.createElement ("p")
     let measureList = "";  
 
-    //loop through measures
+    //for loop to itterate over measures
     for (let i = 1; i <= 15; i++) { 
         const measure = individualCocktail["strMeasure" + i]; 
         if (measure) {
@@ -60,7 +60,9 @@ document.addEventListener ("DOMContentLoaded", function() {
     }
     const cocktailInstructionsP = document.createElement("p")
     cocktailInstructionsP.textContent = individualCocktail.strInstructions
-    
+      
+
+
     // Create star rating
     const ratingDiv = document.createElement("div");
     ratingDiv.classList.add("rating");
@@ -77,16 +79,20 @@ document.addEventListener ("DOMContentLoaded", function() {
         starSpan.addEventListener("click", function() {
             const clickedRating = parseInt(this.getAttribute("data-rating"));
             console.log("User clicked star rating: " + clickedRating);
-            
 
 
-            
+
+
         });
     }
-      
+
+
+
+
        cocktailDiv.append(cocktailImg,cocktailNameP,cocktailGlassP,cocktailIngredientsP,cocktailMeasuresP,cocktailInstructionsP,ratingDiv)
        cocktailContainerDiv.appendChild(cocktailDiv);
 
     });
    });
 });
+
