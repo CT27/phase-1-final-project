@@ -76,9 +76,13 @@ document.addEventListener ("DOMContentLoaded", function() {
         ratingDiv.appendChild(starSpan);
 
         // Add event listener to each star
+        // When a star is clicked, the event listener retrieves the rating value 
+        // from the data-rating attribute and performs actions accordingly.
         starSpan.addEventListener("click", function() {
             const clickedRating = parseInt(this.getAttribute("data-rating"));
             console.log("User clicked star rating: " + clickedRating);
+
+            
 
 
 
