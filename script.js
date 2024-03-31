@@ -99,12 +99,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // collect form data
     const formData = {
-        cocktailName: document.getElementById('cocktail-name').value,
-        cocktailGlass: document.getElementById('cocktail-glass').value,
-        cocktailIngredients: document.getElementById('cocktail-ingredients').value,
-        cocktailMeasures: document.getElementById('cocktail-measures').value,
-        cocktailInstructions: document.getElementById('cocktail-instructions').value,
-        cocktailImage: document.getElementById('cocktail-image').value
+        strDrink: document.getElementById('cocktail-name').value,
+        strGlass: document.getElementById('cocktail-glass').value,
+        strIngredients: document.getElementById('cocktail-ingredients').value.split(',').map(item => item.trim()),
+        strMeasures: document.getElementById('cocktail-measures').value.split(',').map(item => item.trim()),
+        strInstructions: document.getElementById('cocktail-instructions').value,
+        strDrinkThumb: document.getElementById('cocktail-image').value
     };
 
     // send POST request
