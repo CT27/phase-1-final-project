@@ -101,11 +101,26 @@ document.addEventListener("DOMContentLoaded", function() {
     const formData = {
         strDrink: document.getElementById('cocktail-name').value,
         strGlass: document.getElementById('cocktail-glass').value,
-        strIngredients: document.getElementById('cocktail-ingredients').value.split(',').map(item => item.trim()),
-        strMeasures: document.getElementById('cocktail-measures').value.split(',').map(item => item.trim()),
+        // strIngredients: document.getElementById('cocktail-ingredients').value.split(',').map(item => item.trim()),
+        // strMeasures: document.getElementById('cocktail-measures').value.split(',').map(item => item.trim()),
         strInstructions: document.getElementById('cocktail-instructions').value,
         strDrinkThumb: document.getElementById('cocktail-image').value
     };
+    // Splitting ingredients and measures
+    const ingredients = document.getElementById('cocktail-ingredients').value.split(',').map(item => item.trim());
+    const measures = document.getElementById('cocktail-measures').value.split(',').map(item => item.trim());
+
+    // Adding ingredients to formData
+    ingredients.forEach((ingredient, index) => {
+        const ingredientKey = `strIngredient${index + 1}`;
+        formData[ingredientKey] = ingredient;
+    });
+
+    // Adding measures to formData
+    measures.forEach((measure, index) => {
+        const measureKey = `strMeasure${index + 1}`;
+        formData[measureKey] = measure;
+    });
 
     // send POST request
     fetch('http://localhost:3000/drinks', {
