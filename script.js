@@ -1,3 +1,4 @@
+// DRINKS
 // Event listener fired when initial HTML document has been completely loaded, callback function executes the fetch request.
 document.addEventListener("DOMContentLoaded", function() {
     fetch("http://localhost:3000/drinks")
@@ -35,11 +36,11 @@ document.addEventListener("DOMContentLoaded", function() {
             ingredientsList = ingredientsList.slice(0, -2); // After the loop, we remove the last comma and space from the ingredientsList.
             cocktailIngredientsP.textContent = "Ingredients: " + ingredientsList; // Set the text content of cocktailIngredientsP to "Ingredients: " followed by the ingredientsList.
 
-             // Measures 1 through 15 are properties in data
+             // MEASURES 1 through 15 are properties in data
             const cocktailMeasuresP = document.createElement("p");
             let measureList = "";  
 
-            // For loop to iterate over measures
+            // FOR LOOP to iterate over measures
             for (let i = 1; i <= 15; i++) { 
                 const measure = individualCocktail["strMeasure" + i]; 
                 if (measure) {
@@ -69,6 +70,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Add click event listener for star rating
             starRatingContainer.addEventListener("click", function(event) {
+                event.preventDefault();
+                
                 const selectedRating = event.target.dataset.value;
                 console.log("Selected Rating:", selectedRating);
             
@@ -160,11 +163,10 @@ document.addEventListener("DOMContentLoaded", function() {
     .then(response => response.json())
     .then(data => {
         console.log('Success:', data);
-        // Optionally, you can redirect to another page or show a success message here.
+   
     })
     .catch((error) => {
         console.error('Error:', error);
         // Handle errors here
     });
 });
-

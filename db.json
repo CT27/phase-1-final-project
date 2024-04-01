@@ -315,20 +315,56 @@
   ],
   "ratings": [
     {
-      "id": "1b86",
-      "rating": "2"
+      "id": "1",
+      "rating": "3"
     },
     {
-      "id": "abac",
-      "rating": "1"
+      "id": "2",
+      "rating": "3"
     },
     {
-      "id": "14eb",
-      "rating": "1"
+      "id": "3",
+      "rating": "3"
     },
     {
-      "id": "dcb7",
-      "rating": "1"
+      "id": "4",
+      "rating": "3"
+    },
+    {
+      "id": "5",
+      "rating": "5"
+    },
+    {
+      "id": "6",
+      "rating": "4"
+    },
+    {
+      "id": "c688",
+      "rating": "3"
+    },
+    {
+      "id": "b1e1",
+      "rating": "3"
+    },
+    {
+      "id": "768d",
+      "rating": "3"
+    },
+    {
+      "id": "4095",
+      "rating": "3"
+    },
+    {
+      "id": "672c",
+      "rating": "3"
+    },
+    {
+      "id": "5363",
+      "rating": "3"
+    },
+    {
+      "id": "e91f",
+      "rating": "3"
     }
   ]
 }
