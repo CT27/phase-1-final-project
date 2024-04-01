@@ -1,6 +1,6 @@
 
 h1, h2{
-    max-width: 1200px;
+    max-width: fit-content;
     margin: auto;
     padding: 10px;
 }
@@ -10,15 +10,13 @@ div.cocktails div {
     border-color: black;
     border-style: solid;
     padding: 5px;
+
 }
 
-
-
-
-.cocktails {
-    max-width: 1200px;
+.cocktails .cocktail-form {
+    max-width: fit-content;
     margin: auto;
-   
+    flex: auto;
     flex-wrap: wrap;
     padding: 20px;
 }

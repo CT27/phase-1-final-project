@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     break;
                 }
             }
+        
             ingredientsList = ingredientsList.slice(0, -2); // After the loop, we remove the last comma and space from the ingredientsList.
             cocktailIngredientsP.textContent = "Ingredients: " + ingredientsList; // Set the text content of cocktailIngredientsP to "Ingredients: " followed by the ingredientsList.
 
@@ -51,8 +52,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const cocktailInstructionsP = document.createElement("p");
             cocktailInstructionsP.textContent = individualCocktail.strInstructions;
-            
-            cocktailDiv.append(cocktailImg, cocktailNameP, cocktailGlassP, cocktailIngredientsP, cocktailMeasuresP, cocktailInstructionsP);
+
+            // Creating star rating section
+            const starRatingContainer = document.createElement("div");
+            starRatingContainer.classList.add("star-rating");
+
+            for (let i = 1; i <= 5; i++) {
+                const star = document.createElement("span");
+                star.classList.add("star");
+                star.innerHTML = "&#9733;";
+                star.dataset.value = i;
+                starRatingContainer.appendChild(star);
+            }
+
+            // Add click event listener for star rating
+            starRatingContainer.addEventListener("click", function(event) {
+                const selectedRating = event.target.dataset.value;
+                console.log("Selected Rating:", selectedRating);
+
+            });
+            cocktailDiv.append(cocktailImg, cocktailNameP, cocktailGlassP, cocktailIngredientsP, cocktailMeasuresP, cocktailInstructionsP,starRatingContainer);
             cocktailContainerDiv.appendChild(cocktailDiv);
         });
     });
@@ -102,3 +121,4 @@ document.addEventListener("DOMContentLoaded", function() {
         // Handle errors here
     });
 });
+
