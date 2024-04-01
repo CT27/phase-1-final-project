@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ingredientsList = ingredientsList.slice(0, -2); // After the loop, we remove the last comma and space from the ingredientsList.
             cocktailIngredientsP.textContent = "Ingredients: " + ingredientsList; // Set the text content of cocktailIngredientsP to "Ingredients: " followed by the ingredientsList.
 
+             // Measures 1 through 15 are properties in data
             const cocktailMeasuresP = document.createElement("p");
             let measureList = "";  
 
@@ -53,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const cocktailInstructionsP = document.createElement("p");
             cocktailInstructionsP.textContent = individualCocktail.strInstructions;
 
+         /// STAR RATING
             // Creating star rating section
             const starRatingContainer = document.createElement("div");
             starRatingContainer.classList.add("star-rating");
@@ -69,6 +71,16 @@ document.addEventListener("DOMContentLoaded", function() {
             starRatingContainer.addEventListener("click", function(event) {
                 const selectedRating = event.target.dataset.value;
                 console.log("Selected Rating:", selectedRating);
+                // Update stars visually
+    const stars = starRatingContainer.querySelectorAll('.star');
+    stars.forEach(star => {
+        if (star.dataset.value <= selectedRating) {
+            star.classList.add('selected');
+        } else {
+            star.classList.remove('selected');
+        }
+    });
+                
 
             });
             cocktailDiv.append(cocktailImg, cocktailNameP, cocktailGlassP, cocktailIngredientsP, cocktailMeasuresP, cocktailInstructionsP,starRatingContainer);
@@ -80,6 +92,8 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('create-cocktail-form').addEventListener('submit', function(event) {
     event.preventDefault(); // prevent the form from submitting normally
 
+
+    /// INPUT FORM
     // collect form data
     const formData = {
         strDrink: document.getElementById('cocktail-name').value,

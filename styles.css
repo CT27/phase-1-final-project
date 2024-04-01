@@ -13,7 +13,7 @@ div.cocktails div {
 
 }
 
-.cocktails .cocktail-form {
+.cocktails  {
     max-width: fit-content;
     margin: auto;
     flex: auto;
@@ -31,3 +31,6 @@ div.cocktails div {
     
 }
 
+.star.selected {
+    color: yellow;
+}
