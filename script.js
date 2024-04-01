@@ -71,6 +71,8 @@ document.addEventListener("DOMContentLoaded", function() {
             starRatingContainer.addEventListener("click", function(event) {
                 const selectedRating = event.target.dataset.value;
                 console.log("Selected Rating:", selectedRating);
+            
+
                 // Update stars visually
     const stars = starRatingContainer.querySelectorAll('.star');
     stars.forEach(star => {
@@ -80,7 +82,37 @@ document.addEventListener("DOMContentLoaded", function() {
             star.classList.remove('selected');
         }
     });
-                
+
+    // Log the value of cocktailId
+    const cocktailId = individualCocktail.idDrink; // Assuming you have an id for each cocktail
+    console.log("Cocktail ID:", cocktailId);
+
+                // Post rating to the database
+    fetch('http://localhost:3000/ratings/${id}', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            cocktailId: individualCocktail.idDrink, // Assuming you have an id for each cocktail
+            rating: selectedRating
+            
+        }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Rating submitted successfully:', data);
+        // Handle successful rating submission
+    })
+    .catch(error => {
+        console.error('Error posting rating:', error);
+        // Handle error
+    });
 
             });
             cocktailDiv.append(cocktailImg, cocktailNameP, cocktailGlassP, cocktailIngredientsP, cocktailMeasuresP, cocktailInstructionsP,starRatingContainer);
