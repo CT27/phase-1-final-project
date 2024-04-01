@@ -1,7 +1,7 @@
 {
   "drinks": [
     {
-      "idDrink": "1",
+      "id": "1",
       "strDrink": "Margarita",
       "strGlass": "Cocktail glass",
       "strInstructions": "Rub the rim of the glass with the lime slice to make the salt stick to it. Take care to moisten only the outer rim and sprinkle the salt on it. The salt should present to the lips of the imbiber and never mix into the cocktail. Shake the other ingredients with ice, then carefully pour into the glass.",
@@ -48,7 +48,7 @@
       "dateModified": "2015-08-18 14:42:59"
     },
     {
-      "idDrink": "2",
+      "id": "2",
       "strDrink": "Pina Colada",
       "strGlass": "Collins glass",
       "strInstructions": "Mix with crushed ice in blender until smooth. Pour into chilled glass, garnish and serve.",
@@ -95,7 +95,7 @@
       "dateModified": "2017-09-02 17:55:46"
     },
     {
-      "idDrink": "3",
+      "id": "3",
       "strDrink": "Tequila Fizz",
       "strGlass": "Collins glass",
       "strInstructions": "Shake all ingredients (except ginger ale) with ice and strain into a collins glass over ice cubes. Fill with ginger ale, stir, and serve.",
@@ -142,7 +142,7 @@
       "dateModified": "2017-09-08 17:53:57"
     },
     {
-      "idDrink": "4",
+      "id": "4",
       "strDrink": "Mojito",
       "strGlass": "Highball glass",
       "strInstructions": "Muddle mint leaves with sugar and lime juice. Add a splash of soda water and fill the glass with cracked ice. Pour the rum and top with soda water. Garnish and serve with straw.",
@@ -189,7 +189,7 @@
       "dateModified": "2016-11-04 09:17:09"
     },
     {
-      "idDrink": "5",
+      "id": "5",
       "strDrink": "Whiskey Sour",
       "strGlass": "Old-fashioned glass",
       "strInstructions": "Shake with ice. Strain into chilled glass, garnish and serve. If served 'On the rocks', strain ingredients into old-fashioned glass filled with ice.",
@@ -236,7 +236,7 @@
       "dateModified": "2017-09-02 12:45:25"
     },
     {
-      "idDrink": "6",
+      "id": "6",
       "strDrink": "Gin Fizz",
       "strGlass": "Highball glass",
       "strInstructions": "Shake all ingredients with ice cubes, except soda water. Pour into glass. Top with soda water.",
@@ -313,35 +313,22 @@
       "strMeasure6": "wedge"
     }
   ],
-  "ratings": {
-    "1": [
-      4,
-      5
-    ],
-    "2": [
-      3,
-      4,
-      5
-    ],
-    "3": [
-      3,
-      4,
-      5
-    ],
-    "4": [
-      3,
-      4,
-      5
-    ],
-    "5": [
-      3,
-      4,
-      5
-    ],
-    "6": [
-      3,
-      4,
-      5
-    ]
-  }
+  "ratings": [
+    {
+      "id": "1b86",
+      "rating": "2"
+    },
+    {
+      "id": "abac",
+      "rating": "1"
+    },
+    {
+      "id": "14eb",
+      "rating": "1"
+    },
+    {
+      "id": "dcb7",
+      "rating": "1"
+    }
+  ]
 }

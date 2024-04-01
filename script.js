@@ -84,11 +84,11 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Log the value of cocktailId
-    const cocktailId = individualCocktail.idDrink; // Assuming you have an id for each cocktail
+    const cocktailId = individualCocktail.id; // Assuming you have an id for each cocktail
     console.log("Cocktail ID:", cocktailId);
 
-                // Post rating to the database
-    fetch('http://localhost:3000/ratings/${id}', {
+    // Post rating to the database
+    fetch("http://localhost:3000/ratings", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
