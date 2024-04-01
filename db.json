@@ -292,6 +292,25 @@
       "strIngredient2": "Orange juice",
       "strIngredient3": "Triple sec",
       "strMeasure1": "2 measures"
+    },
+    {
+      "id": "b1e1",
+      "strDrink": "Bloody Mary",
+      "strGlass": "Old-fashioned glass",
+      "strInstructions": "Stirring gently, pour all ingredients into highball glass. Garnish",
+      "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/t6caa21582485702.jpg",
+      "strIngredient1": "Vodka",
+      "strIngredient2": "Tomato juice",
+      "strIngredient3": "Lemon juice",
+      "strIngredient4": "Worcestershire sauce",
+      "strIngredient5": "Tobasco sauce",
+      "strIngredient6": "Lime",
+      "strMeasure1": "11 /2 oz",
+      "strMeasure2": "3 oz",
+      "strMeasure3": "1 dash",
+      "strMeasure4": "1/2 tsp",
+      "strMeasure5": "1-2 drops",
+      "strMeasure6": "wedge"
     }
   ],
   "ratings": {
