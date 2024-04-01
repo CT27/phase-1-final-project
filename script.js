@@ -51,44 +51,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const cocktailInstructionsP = document.createElement("p");
             cocktailInstructionsP.textContent = individualCocktail.strInstructions;
-              
-            // Create star rating
-            const ratingDiv = document.createElement("div");
-            ratingDiv.classList.add("rating");
-
-            const ratingValue = 4; // Set the rating value here
-            for (let i = 1; i <= 5; i++) {
-                const starSpan = document.createElement("span");
-                starSpan.textContent = i <= ratingValue ? "★" : "☆"; // Use ★ for filled star and ☆ for empty star
-                starSpan.setAttribute("data-rating", i); // Set data-rating attribute to the value of the star
-                starSpan.classList.add("star");
-                ratingDiv.appendChild(starSpan);
-
-                // Add event listener to each star
-                // When a star is clicked, the event listener retrieves the rating value 
-                // from the data-rating attribute and performs actions accordingly.
-                starSpan.addEventListener("click", function() {
-                    const clickedRating = parseInt(this.getAttribute("data-rating"));
-                    console.log("User clicked star rating: " + clickedRating);
-
-            //         // Send rating to the server
-            //         fetch('http://localhost:3000/ratings', 
-            //         {
-            //             method: 'POST',
-            //             headers: {
-            //                 'Content-Type': 'application/json'
-            //             },
-            //             body: JSON.stringify({
-            //                cocktailId: individualCocktail.id,
-            //                 ratings: clickedRating
-            //             })
-            //         })
-            //         .then(res => res.json())
-            //         .then(ratings => console.log(ratings))
-            //         .catch(error => console.error("Error sending rating to the server:", error)); // Handle any errors
-                });
-            };
-            cocktailDiv.append(cocktailImg, cocktailNameP, cocktailGlassP, cocktailIngredientsP, cocktailMeasuresP, cocktailInstructionsP, ratingDiv);
+            
+            cocktailDiv.append(cocktailImg, cocktailNameP, cocktailGlassP, cocktailIngredientsP, cocktailMeasuresP, cocktailInstructionsP);
             cocktailContainerDiv.appendChild(cocktailDiv);
         });
     });
@@ -101,8 +65,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const formData = {
         strDrink: document.getElementById('cocktail-name').value,
         strGlass: document.getElementById('cocktail-glass').value,
-        // strIngredients: document.getElementById('cocktail-ingredients').value.split(',').map(item => item.trim()),
-        // strMeasures: document.getElementById('cocktail-measures').value.split(',').map(item => item.trim()),
         strInstructions: document.getElementById('cocktail-instructions').value,
         strDrinkThumb: document.getElementById('cocktail-image').value
     };

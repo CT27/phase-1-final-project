@@ -5,10 +5,20 @@ h1, h2{
     padding: 10px;
 }
 
-.cocktails, .cocktail-form{
+div.cocktails div {
+    border: 5px;
+    border-color: black;
+    border-style: solid;
+    padding: 5px;
+}
+
+
+
+
+.cocktails {
     max-width: 1200px;
     margin: auto;
-    display: flex;
+   
     flex-wrap: wrap;
     padding: 20px;
 }
@@ -22,3 +32,4 @@ h1, h2{
     font-size: x-large;
     
 }
+
