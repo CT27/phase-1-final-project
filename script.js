@@ -1,174 +1,104 @@
-// DRINKS
 // Event listener fired when initial HTML document has been completely loaded, callback function executes the fetch request.
-document.addEventListener("DOMContentLoaded", function(event) {
-    fetch("http://localhost:3000/drinks")
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("http://localhost:3000/drinks")
     .then((res) => res.json())
     .then((drinks) => {
-        drinks.forEach(individualCocktail => {
-            const cocktailContainerDiv = document.querySelector(".cocktails");
-            const cocktailDiv = document.createElement("div");
-            
-            const cocktailImg = document.createElement("img");
-            cocktailImg.src = individualCocktail.strDrinkThumb;
-            cocktailImg.classList.add("cocktail-image"); // Add a class to the image for sizes in CSS
+      drinks.forEach((individualCocktail) => {
+        const cocktailContainerDiv = document.querySelector(".cocktails");
+        const cocktailDiv = document.createElement("div");
 
-            const cocktailNameP = document.createElement("p");
-            cocktailNameP.textContent = individualCocktail.strDrink;
-            cocktailNameP.classList.add("name-size"); // Add a class to the image for sizes in CSS
+        const cocktailImg = document.createElement("img");
+        cocktailImg.src = individualCocktail.strDrinkThumb;
+        cocktailImg.classList.add("cocktail-image"); // Add a class to the image for sizes in CSS
 
-            const cocktailGlassP = document.createElement("p");
-            cocktailGlassP.textContent = individualCocktail.strGlass;
+        const cocktailNameP = document.createElement("p");
+        cocktailNameP.textContent = individualCocktail.strDrink;
+        cocktailNameP.classList.add("name-size"); // Add a class to the image for sizes in CSS
 
-            const cocktailIngredientsP = document.createElement("p");
-            let ingredientsList = "";  // This creates a list
-           
-            // Ingredients 1 through 15 are properties in data
-            for (let i = 1; i <= 15; i++) { // We use a for loop
-                const ingredient = individualCocktail["strIngredient" + i]; // Retrieve the ingredient value from the current property using bracket notation
-                if (ingredient) {
-                    ingredientsList += ingredient + ", "; // If the ingredient exists (i.e., it's not null or undefined), we append it to the ingredientsList.
-                } else {
-                     // If there are no more ingredients, break out of the loop
-                    break;
-                }
-            }
-        
-            ingredientsList = ingredientsList.slice(0, -2); // After the loop, we remove the last comma and space from the ingredientsList.
-            cocktailIngredientsP.textContent = "Ingredients: " + ingredientsList; // Set the text content of cocktailIngredientsP to "Ingredients: " followed by the ingredientsList.
+        const cocktailGlassP = document.createElement("p");
+        cocktailGlassP.textContent = individualCocktail.strGlass;
 
-             // MEASURES 1 through 15 are properties in data
-            const cocktailMeasuresP = document.createElement("p");
-            let measureList = "";  
+        const cocktailIngredientsP = document.createElement("p");
+        let ingredientsList = ""; // This creates a list
 
-            // FOR LOOP to iterate over measures
-            for (let i = 1; i <= 15; i++) { 
-                const measure = individualCocktail["strMeasure" + i]; 
-                if (measure) {
-                    measureList += measure + ", "; 
-                } else {
-                    break;
-                }
-            }
-            measureList = measureList.slice(0, -2);
-            cocktailMeasuresP.textContent = "Measure: " + measureList; 
-
-            const cocktailInstructionsP = document.createElement("p");
-            cocktailInstructionsP.textContent = individualCocktail.strInstructions;
-
-         /// STAR RATING
-            // Creating star rating section
-            const cocktailRatingP = document.createElement("p");
-            cocktailRatingP.classList.add("star-rating");
-
-            for (let i = 1; i <= 5; i++) {
-                const star = document.createElement("span");
-                star.classList.add("star");
-                star.innerHTML = "&#9733;";
-                star.dataset.value = i;
-                cocktailRatingP.appendChild(star);
-            }
-
-            // Add click event listener for star rating
-                cocktailRatingP.addEventListener("click", function(event) {
-                event.preventDefault();
-                
-                const selectedRating = event.target.dataset.value;
-                console.log("Selected Rating:", selectedRating);
-            
-
-                // Update stars visually
-                const stars = cocktailRatingP.querySelectorAll('.star');
-                stars.forEach(star => {
-                    if (star.dataset.value <= selectedRating) {
-                        star.classList.add('selected');
-                    } else {
-                        star.classList.remove('selected');
-                    }
-                });
-       
-                
-
-    // Log the value of cocktailId
-    const cocktailId = individualCocktail.id; // Assuming you have an id for each cocktail
-    console.log("Cocktail ID:", cocktailId);
-
-    // Post rating to the database
-    fetch("http://localhost:3000/ratings", {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            cocktailId: individualCocktail.idDrink, // Assuming you have an id for each cocktail
-            rating: selectedRating
-            
-        }),
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+        // Ingredients 1 through 15 are properties in data
+        for (let i = 1; i <= 15; i++) {
+          // We use a for loop
+          const ingredient = individualCocktail["strIngredient" + i]; // Retrieve the ingredient value from the current property using bracket notation
+          if (ingredient) {
+            ingredientsList += ingredient + ", "; // If the ingredient exists (i.e., it's not null or undefined), we append it to the ingredientsList.
+          } else {
+            // If there are no more ingredients, break out of the loop
+            break;
+          }
         }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Rating submitted successfully:', data);
-        // Handle successful rating submission
-    })
-    .catch(error => {
-        console.error('Error posting rating:', error);
-        // Handle error
-    });
+        ingredientsList = ingredientsList.slice(0, -2); // After the loop, we remove the last comma and space from the ingredientsList.
+        cocktailIngredientsP.textContent = "Ingredients: " + ingredientsList; // Set the text content of cocktailIngredientsP to "Ingredients: " followed by the ingredientsList.
 
-            });
-            cocktailDiv.append(cocktailImg, cocktailNameP, cocktailGlassP, cocktailIngredientsP, cocktailMeasuresP, cocktailInstructionsP,cocktailRatingP);
-            cocktailContainerDiv.appendChild(cocktailDiv);
-        });
-    });
-});
+        const cocktailMeasuresP = document.createElement("p");
+        let measureList = "";
 
-    document.getElementById('create-cocktail-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // prevent the form from submitting normally
+        // For loop to iterate over measures
+        for (let i = 1; i <= 15; i++) {
+          const measure = individualCocktail["strMeasure" + i];
+          if (measure) {
+            measureList += measure + ", ";
+          } else {
+            break;
+          }
+        }
+        measureList = measureList.slice(0, -2);
+        cocktailMeasuresP.textContent = "Measure: " + measureList;
 
+        const cocktailInstructionsP = document.createElement("p");
+        cocktailInstructionsP.textContent = individualCocktail.strInstructions;
 
-    /// INPUT FORM
-    // collect form data
-    const formData = {
-        strDrink: document.getElementById('cocktail-name').value,
-        strGlass: document.getElementById('cocktail-glass').value,
-        strInstructions: document.getElementById('cocktail-instructions').value,
-        strDrinkThumb: document.getElementById('cocktail-image').value
-    };
-    // Splitting ingredients and measures
-    const ingredients = document.getElementById('cocktail-ingredients').value.split(',').map(item => item.trim());
-    const measures = document.getElementById('cocktail-measures').value.split(',').map(item => item.trim());
+        // Create star rating
+        const ratingDiv = document.createElement("div");
+        ratingDiv.classList.add("rating");
 
-    // Adding ingredients to formData
-    ingredients.forEach((ingredient, index) => {
-        const ingredientKey = `strIngredient${index + 1}`;
-        formData[ingredientKey] = ingredient;
-    });
+        const ratingValue = 4; // Set the rating value here
+        for (let i = 1; i <= 5; i++) {
+          const starSpan = document.createElement("span");
+          starSpan.textContent = i <= ratingValue ? "★" : "☆"; // Use ★ for filled star and ☆ for empty star
+          starSpan.setAttribute("data-rating", i); // Set data-rating attribute to the value of the star
+          starSpan.classList.add("star");
+          ratingDiv.appendChild(starSpan);
 
-    // Adding measures to formData
-    measures.forEach((measure, index) => {
-        const measureKey = `strMeasure${index + 1}`;
-        formData[measureKey] = measure;
-    });
+          // Add event listener to each star
+          // When a star is clicked, the event listener retrieves the rating value
+          // from the data-rating attribute and performs actions accordingly.
+          starSpan.addEventListener("click", function () {
+            const clickedRating = parseInt(this.getAttribute("data-rating"));
+            console.log("User clicked star rating: " + clickedRating);
 
-    // send POST request
-    fetch('http://localhost:3000/drinks', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:', data);
-   
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-        // Handle errors here
+            //         // Send rating to the server
+            //         fetch('http://localhost:3000/ratings',
+            //         {
+            //             method: 'POST',
+            //             headers: {
+            //                 'Content-Type': 'application/json'
+            //             },
+            //             body: JSON.stringify({
+            //                cocktailId: individualCocktail.id,
+            //                 ratings: clickedRating
+            //             })
+            //         })
+            //         .then(res => res.json())
+            //         .then(ratings => console.log(ratings))
+            //         .catch(error => console.error("Error sending rating to the server:", error)); // Handle any errors
+          });
+        }
+        cocktailDiv.append(
+          cocktailImg,
+          cocktailNameP,
+          cocktailGlassP,
+          cocktailIngredientsP,
+          cocktailMeasuresP,
+          cocktailInstructionsP,
+          ratingDiv
+        );
+        cocktailContainerDiv.appendChild(cocktailDiv);
+      });
     });
 });

@@ -36,6 +36,14 @@ div.cocktails div {
     font-size: x-large;
 }
 
+
+
 .star.selected {
     color: yellow;
+    
+}
+
+.star.rating {
+
+
 }
