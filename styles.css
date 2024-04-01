@@ -1,5 +1,4 @@
-
-h1, h2{
+h1, h2 {
     max-width: fit-content;
     margin: auto;
     padding: 10px;
@@ -10,25 +9,31 @@ div.cocktails div {
     border-color: black;
     border-style: solid;
     padding: 5px;
-
 }
 
-.cocktails  {
-    max-width: fit-content;
-    margin: auto;
-    flex: auto;
-    flex-wrap: wrap;
+.cocktails {
+    display: flex; /* Make the container a flex container */
+    max-width: 800px;
     padding: 20px;
 }
 
-.cocktail-image {
-    width: 200px; /* Set width to 100 pixels */
-    height: 200px; /* Set height to 100 pixels */
+.cocktail {
+    flex: 1; /* Let the cocktails take available space */
 }
 
-.name-size{
+.cocktail-form {
+    flex: 1; /* Let the form take available space */
+    margin-left: 20px; /* Add some space between the cocktail and form */
+    padding-left: 20px; /* Add padding for better appearance */
+}
+
+.cocktail-image {
+    width: 200px;
+    height: 200px;
+}
+
+.name-size {
     font-size: x-large;
-    
 }
 
 .star.selected {

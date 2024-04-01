@@ -1,6 +1,6 @@
 // DRINKS
 // Event listener fired when initial HTML document has been completely loaded, callback function executes the fetch request.
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function(event) {
     fetch("http://localhost:3000/drinks")
     .then((res) => res.json())
     .then((drinks) => {
@@ -57,19 +57,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
          /// STAR RATING
             // Creating star rating section
-            const starRatingContainer = document.createElement("div");
-            starRatingContainer.classList.add("star-rating");
+            const cocktailRatingP = document.createElement("p");
+            cocktailRatingP.classList.add("star-rating");
 
             for (let i = 1; i <= 5; i++) {
                 const star = document.createElement("span");
                 star.classList.add("star");
                 star.innerHTML = "&#9733;";
                 star.dataset.value = i;
-                starRatingContainer.appendChild(star);
+                cocktailRatingP.appendChild(star);
             }
 
             // Add click event listener for star rating
-            starRatingContainer.addEventListener("click", function(event) {
+                cocktailRatingP.addEventListener("click", function(event) {
                 event.preventDefault();
                 
                 const selectedRating = event.target.dataset.value;
@@ -77,14 +77,16 @@ document.addEventListener("DOMContentLoaded", function() {
             
 
                 // Update stars visually
-    const stars = starRatingContainer.querySelectorAll('.star');
-    stars.forEach(star => {
-        if (star.dataset.value <= selectedRating) {
-            star.classList.add('selected');
-        } else {
-            star.classList.remove('selected');
-        }
-    });
+                const stars = cocktailRatingP.querySelectorAll('.star');
+                stars.forEach(star => {
+                    if (star.dataset.value <= selectedRating) {
+                        star.classList.add('selected');
+                    } else {
+                        star.classList.remove('selected');
+                    }
+                });
+       
+                
 
     // Log the value of cocktailId
     const cocktailId = individualCocktail.id; // Assuming you have an id for each cocktail
@@ -118,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
             });
-            cocktailDiv.append(cocktailImg, cocktailNameP, cocktailGlassP, cocktailIngredientsP, cocktailMeasuresP, cocktailInstructionsP,starRatingContainer);
+            cocktailDiv.append(cocktailImg, cocktailNameP, cocktailGlassP, cocktailIngredientsP, cocktailMeasuresP, cocktailInstructionsP,cocktailRatingP);
             cocktailContainerDiv.appendChild(cocktailDiv);
         });
     });
