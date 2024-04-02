@@ -6,23 +6,25 @@ h1, h2 {
 
 div.cocktails div {
     border: 5px;
+    margin: 1px;
     border-color: black;
     border-style: solid;
     padding: 5px;
+    width: 25%;
 }
 
 .cocktails {
     display: flex; /* Make the container a flex container */
-    max-width: 800px;
+    flex-wrap: wrap;
+    max-width: fit-content;
     padding: 20px;
 }
 
-.cocktail {
-    flex: 1; /* Let the cocktails take available space */
-}
+
+
 
 .cocktail-form {
-    flex: 1; /* Let the form take available space */
+   
     margin-left: 20px; /* Add some space between the cocktail and form */
     padding-left: 20px; /* Add padding for better appearance */
 }
@@ -38,12 +40,3 @@ div.cocktails div {
 
 
 
-.star.selected {
-    color: yellow;
-    
-}
-
-.star.rating {
-
-
-}
