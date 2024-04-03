@@ -1,16 +1,27 @@
-
+body {
+font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
 
 h1, h2 {
-    max-width: 800px;
+    max-width: fit-content;
     margin: auto;
     padding: 10px;
 }
+
+.parent-container {
+    display: grid;
+    grid-template-columns: 20% 80%;
+  }
+
+
+
+
 
 /* individual cocktails */
 div.cocktails div {
     border: 10px;
     margin: 5px;
-    border-color: black;
+    border-color: rgb(222, 104, 104);
     border-style: solid;
     padding: 10px;
     width: 20%;
@@ -26,14 +37,19 @@ div.cocktails div {
 
 
 .cocktail-image {
-    width: 250
-    x;
+    width: 250px;
     height: 250px;
     display: block;
-    margin: auto;
-    
   
     
+}
+
+
+div.cocktail-form {
+flex-direction: column;
+flex-wrap: wrap;
+border-style: dotted;
+border-color: yellow;
 }
 
 .name-size {
@@ -44,3 +60,5 @@ div.cocktails div {
 p {
     font-size: larger;
 }
+
+  
