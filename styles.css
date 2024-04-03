@@ -1,37 +1,39 @@
+
+
 h1, h2 {
-    max-width: fit-content;
+    max-width: 800px;
     margin: auto;
     padding: 10px;
 }
 
+/* individual cocktails */
 div.cocktails div {
-    border: 5px;
-    margin: 1px;
+    border: 10px;
+    margin: 5px;
     border-color: black;
     border-style: solid;
-    padding: 5px;
-    width: 25%;
+    padding: 10px;
+    width: 20%;
 }
 
+/* contains the entire cocktail div */
 .cocktails {
     display: flex; /* Make the container a flex container */
     flex-wrap: wrap;
-    max-width: fit-content;
     padding: 20px;
+    width: 80%;
 }
 
-
-
-
-.cocktail-form {
-   
-    margin-left: 20px; /* Add some space between the cocktail and form */
-    padding-left: 20px; /* Add padding for better appearance */
-}
 
 .cocktail-image {
-    width: 200px;
-    height: 200px;
+    width: 250
+    x;
+    height: 250px;
+    display: block;
+    margin: auto;
+    
+  
+    
 }
 
 .name-size {
@@ -39,4 +41,6 @@ div.cocktails div {
 }
 
 
-
+p {
+    font-size: larger;
+}
