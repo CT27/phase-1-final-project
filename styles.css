@@ -19,12 +19,13 @@ h1, h2 {
 
 /* individual cocktails */
 div.cocktails div {
-    border: 10px;
-    margin: 5px;
+    border-width: 10px;
+    margin: 10px;
     border-color: rgb(222, 104, 104);
-    border-style: solid;
-    padding: 10px;
-    width: 20%;
+    border-style:dotted;
+    padding: 30px;
+    width: 20%
+
 }
 
 /* contains the entire cocktail div */
@@ -47,12 +48,23 @@ div.cocktails div {
 
 div.cocktail-form {
 flex-direction: column;
-flex-wrap: wrap;
 border-style: dotted;
-border-color: yellow;
+border-color: rgb(222, 104, 104);
+border-width: 10px;
+padding: 30px;
+margin: 10px;
+font-size: x-large;
+width: 80%;
+
 }
 
+
+
+
+
+
 .name-size {
+    font-weight: bold;
     font-size: x-large;
 }
 

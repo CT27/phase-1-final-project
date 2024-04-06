@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const cocktailIngredientsP = document.createElement("p");
         let ingredientsList = "";
+
         for (let i = 1; i <= 15; i++) {
           const ingredient = individualCocktail["strIngredient" + i];
           if (ingredient) {
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
             break;
           }
         }
+
         ingredientsList = ingredientsList.slice(0, -2);
         cocktailIngredientsP.textContent = "Ingredients: " + ingredientsList;
 
