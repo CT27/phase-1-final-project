@@ -11,11 +11,8 @@ h1, h2 {
 .parent-container {
     display: grid;
     grid-template-columns: 20% 80%;
+    
   }
-
-
-
-
 
 /* individual cocktails */
 div.cocktails div {
@@ -25,7 +22,6 @@ div.cocktails div {
     border-style:dotted;
     padding: 30px;
     width: 20%
-
 }
 
 /* contains the entire cocktail div */
