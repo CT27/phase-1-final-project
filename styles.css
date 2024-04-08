@@ -1,8 +1,9 @@
 
 html{
-    /* background-color: black; */
-    background-image: URL()
+    /* background-color: rgba(58,70,180,1); */
+    background-image: url(/images/zebra.jpeg);
 
+   
 }
 
 body {
@@ -13,11 +14,16 @@ h1, h2 {
     max-width: fit-content;
     margin: auto;
     padding: 1em;
-   color:    rgba(249,252,69,1);
+    color:  black;
+    font-size: xx-large;
+    background: linear-gradient(90deg, rgba(58,70,180,1) 0%, rgba(249,29,253,1) 50%, rgba(249,252,69,1) 100%);
+  
    
 }
 
 .parent-container {
+    margin: 1.5em;
+    padding: 1.5em;
     display: grid;
     grid-template-columns: 20% 80%;
     background: rgb(58,70,180);
@@ -31,7 +37,7 @@ div.cocktails div {
     margin: 1em;
     border-color: rgba(249,252,69,1);
     border-style:dotted;
-    padding: 30px;
+    padding: 3em;
     width: 90%;
 }
 
@@ -39,16 +45,16 @@ div.cocktails div {
 .cocktails {
     display: flex;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 2em;
     width: 100%;
 }
 
 
 .cocktail-image {
-    width: 250px;
-    height: 250px;
+    width:20em;
+    height: 20em;
     display: block;
-  
+    
     
 }
 
@@ -73,12 +79,12 @@ width: 110%;
 
 .name-size {
     font-weight: bold;
-    font-size: x-large;
+    font-size: xx-large;
 }
 
 
 p {
-    font-size: larger;
+    font-size: x-large;
 }
 
   

@@ -2,26 +2,26 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch("http://localhost:3000/drinks")
     .then((res) => res.json())
     .then((drinks) => {
-      drinks.forEach((individualCocktail) => {
+      drinks.forEach((item) => {
         const cocktailContainerDiv = document.querySelector(".cocktails");
         const cocktailDiv = document.createElement("div");
 
         const cocktailImg = document.createElement("img");
-        cocktailImg.src = individualCocktail.strDrinkThumb;
+        cocktailImg.src = item.strDrinkThumb;
         cocktailImg.classList.add("cocktail-image");
 
         const cocktailNameP = document.createElement("p");
-        cocktailNameP.textContent = individualCocktail.strDrink;
+        cocktailNameP.textContent = item.strDrink;
         cocktailNameP.classList.add("name-size");
 
         const cocktailGlassP = document.createElement("p");
-        cocktailGlassP.textContent = individualCocktail.strGlass;
+        cocktailGlassP.textContent = item.strGlass;
 
         const cocktailIngredientsP = document.createElement("p");
         let ingredientsList = "";
 
         for (let i = 1; i <= 15; i++) {
-          const ingredient = individualCocktail["strIngredient" + i];
+          const ingredient = item["strIngredient" + i];
           if (ingredient) {
             ingredientsList += ingredient + ", ";
           } else {
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const cocktailMeasuresP = document.createElement("p");
         let measureList = "";
         for (let i = 1; i <= 15; i++) {
-          const measure = individualCocktail["strMeasure" + i];
+          const measure = item["strMeasure" + i];
           if (measure) {
             measureList += measure + ", ";
           } else {
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         cocktailMeasuresP.textContent = "Measure: " + measureList;
 
         const cocktailInstructionsP = document.createElement("p");
-        cocktailInstructionsP.textContent = individualCocktail.strInstructions;
+        cocktailInstructionsP.textContent = item.strInstructions;
 
         // Append child elements inside the loop
         cocktailDiv.append(
