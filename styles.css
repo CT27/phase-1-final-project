@@ -63,6 +63,7 @@ div.cocktails div {
 
 div.cocktail-form {
 flex-direction: column;
+flex-basis: content;
 border-width: 1em;
 margin: 1em;
 font-size: x-large;
