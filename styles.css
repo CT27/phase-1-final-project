@@ -41,7 +41,7 @@ div.cocktails div {
     border-color: rgba(249,252,69,1);
     border-style:dotted;
     padding: 1.5em;
-    width: 25%
+    width: 33%;
 }
 
 /* contains the entire cocktail div */
@@ -55,8 +55,8 @@ div.cocktails div {
 
 
 .cocktail-image {
-    width:10em;
-    height: 10em;
+    width:15em;
+    height: 15em;
     display: block;
 }
 
