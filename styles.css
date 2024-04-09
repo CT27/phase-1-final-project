@@ -1,7 +1,6 @@
 
 html{
-  
-    background-image: url(/images/zebra.jpeg);
+background-image: url(/images/zebra.jpeg);
 
    
 }
@@ -17,7 +16,7 @@ font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ox
     /* max-width: fit-content; */
     margin: 1em;
     padding: 1em;
-    color:  black;
+    color:  rgba(249,252,69,1);
     font-size: x-large;
     font-stretch: wider;
     background: linear-gradient(90deg, rgba(58,70,180,1) 0%, rgba(249,29,253,1) 50%, rgba(249,252,69,1) 100%);
@@ -41,8 +40,8 @@ div.cocktails div {
     margin: 1em;
     border-color: rgba(249,252,69,1);
     border-style:dotted;
-    padding: 3em;
-    width: 90%;
+    padding: 1.5em;
+    width: 25%
 }
 
 /* contains the entire cocktail div */
@@ -51,41 +50,37 @@ div.cocktails div {
     flex-wrap: wrap;
     padding: 2em;
     width: 80%;
+    color: rgba(249,252,69,1);
 }
 
 
 .cocktail-image {
-    width:20em;
-    height: 20em;
+    width:10em;
+    height: 10em;
     display: block;
-    
-    
 }
 
 
 div.cocktail-form {
 flex-direction: column;
-border-width: 10px;
-padding: 30px;
-margin: 10px;
+border-width: 1em;
+margin: 1em;
 font-size: x-large;
 font-weight: bold;
 width: 110%;
+color:rgba(249,252,69,1) ;
 }
 
-
-#submit-button {
+div #submit-button {
     font-size: x-large;
-    font-weight: bold;   
+    font-weight: bold;  
+   
 }
-
-
 
 .name-size {
     font-weight: bold;
     font-size: xx-large;
 }
-
 
 p {
     font-size: x-large;
