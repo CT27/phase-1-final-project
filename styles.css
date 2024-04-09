@@ -49,7 +49,7 @@ div.cocktails div {
     display: flex;
     flex-wrap: wrap;
     padding: 2em;
-    width: 80%;
+    width: 100%;
     color: rgba(249,252,69,1);
 }
 
@@ -68,7 +68,7 @@ margin: 1em;
 font-size: x-large;
 font-weight: bold;
 width: 110%;
-color:rgba(249,252,69,1) ;
+color:rgba(249,252,69,1);
 }
 
 div #submit-button {
@@ -84,6 +84,7 @@ div #submit-button {
 
 p {
     font-size: x-large;
+    
 }
 
   
