@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         cocktailIngredientsP.textContent = "Ingredients: " + ingredientsList;
 
         const cocktailMeasuresP = document.createElement("p");
+
         let measureList = "";
         for (let i = 1; i <= 15; i++) {
           const measure = item["strMeasure" + i];
@@ -103,10 +104,8 @@ document
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
-        // Optionally, you can redirect to another page or show a success message here.
       })
       .catch((error) => {
         console.error("Error:", error);
-        // Handle errors here
       });
   });

@@ -21,7 +21,6 @@ font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ox
     font-stretch: wider;
     background: linear-gradient(90deg, rgba(58,70,180,1) 0%, rgba(249,29,253,1) 50%, rgba(249,252,69,1) 100%);
   
-   
 }
 
 .parent-container {
@@ -41,7 +40,7 @@ div.cocktails div {
     border-color: rgba(249,252,69,1);
     border-style:dotted;
     padding: 1.5em;
-    width: 33%;
+    width: 25%
 }
 
 /* contains the entire cocktail div */
@@ -49,27 +48,24 @@ div.cocktails div {
     display: flex;
     flex-wrap: wrap;
     padding: 2em;
-    width: 100%;
+    width: 80%;
     color: rgba(249,252,69,1);
 }
 
-
 .cocktail-image {
-    width:15em;
-    height: 15em;
+    width:10em;
+    height: 10em;
     display: block;
 }
 
-
 div.cocktail-form {
 flex-direction: column;
-flex-basis: content;
 border-width: 1em;
 margin: 1em;
 font-size: x-large;
 font-weight: bold;
 width: 110%;
-color:rgba(249,252,69,1);
+color:rgba(249,252,69,1) ;
 }
 
 div #submit-button {
@@ -85,7 +81,6 @@ div #submit-button {
 
 p {
     font-size: x-large;
-    
 }
 
   
