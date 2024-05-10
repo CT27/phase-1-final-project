@@ -78,96 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const cocktailInstructionsP = document.createElement("p");
         cocktailInstructionsP.textContent = item.strInstructions;
 
-        // /// EVENT LISTENER 2 -> "CLICK"
-        // // Like and Dislike buttons
-        // const likeButton = document.createElement("button");
-        // likeButton.textContent = "👍";
-        // const dislikeButton = document.createElement("button");
-        // dislikeButton.textContent = "👎";
-
-        // // Like and Dislike counts
-        // let likes = 0;
-        // let dislikes = 0;
-        // const likeCount = document.createElement("span");
-        // const dislikeCount = document.createElement("span");
-        // likeCount.textContent = item.likes;
-        // dislikeCount.textContent = dislikes;
-
-        // // Event listeners for Like and Dislike buttons
-        // likeButton.addEventListener("click", function () {
-        //   const cocktailId = cocktailDiv.dataset.cocktailId; // Retrieve cocktailId
-        //   likes++;
-        //   likeCount.textContent = likes; // Update the like count in the DOM
-        //   // Send request to update backend
-        //   updateLikes(cocktailId, likes); // Call updateLikes with cocktailId
-        // });
-
-        // dislikeButton.addEventListener("click", function () {
-        //   const cocktailId = cocktailDiv.dataset.cocktailId; // Retrieve cocktailId
-        //   dislikes++;
-        //   dislikeCount.textContent = dislikes;
-
-        //   // Send request to update backend
-        //   updateDislikes(cocktailId, dislikes); // Call updateDislikes with cocktailId
-        // });
-
-        // function updateLikes(cocktailId, likes) {
-        //   // Fetch the existing cocktail data
-        //   fetch(`http://localhost:3000/drinks/${cocktailId}`)
-        //     .then((response) => response.json())
-        //     .then((cocktail) => {
-        //       // Update the likes count
-        //       cocktail.likes = likes;
-
-        //       // Send a PUT request to update the entire cocktail object
-        //       fetch(`http://localhost:3000/drinks/${cocktailId}`, {
-        //         method: "PUT",
-        //         headers: {
-        //           "Content-Type": "application/json",
-        //         },
-        //         body: JSON.stringify(cocktail), // Send the entire updated cocktail object
-        //       })
-        //         .then((response) => response.json())
-        //         .then((data) => {
-        //           console.log("Likes updated:", data);
-        //         })
-        //         .catch((error) => {
-        //           console.error("Error updating likes:", error);
-        //         });
-        //     })
-        //     .catch((error) => {
-        //       console.error("Error fetching cocktail data:", error);
-        //     });
-        // }
-
-        // function updateDislikes(cocktailId, dislikes) {
-        //   // Fetch the existing cocktail data
-        //   fetch(`http://localhost:3000/drinks/${cocktailId}`)
-        //     .then((response) => response.json())
-        //     .then((cocktail) => {
-        //       // Update the dislikes count
-        //       cocktail.dislikes = dislikes;
-
-        //       // Send a PUT request to update the entire cocktail object
-        //       fetch(`http://localhost:3000/drinks/${cocktailId}`, {
-        //         method: "PUT",
-        //         headers: {
-        //           "Content-Type": "application/json",
-        //         },
-        //         body: JSON.stringify(cocktail), // Send the entire updated cocktail object
-        //       })
-        //         .then((response) => response.json())
-        //         .then((data) => {
-        //           console.log("Dislikes updated:", data);
-        //         })
-        //         .catch((error) => {
-        //           console.error("Error updating dislikes:", error);
-        //         });
-        //     })
-        //     .catch((error) => {
-        //       console.error("Error fetching cocktail data:", error);
-        //     });
-        // }
         // EVENT LISTENER 2 -> "CLICK"
         // Like button
         const likeButton = document.createElement("button");
@@ -186,7 +96,8 @@ document.addEventListener("DOMContentLoaded", function () {
         dislikeCount.textContent = dislikes;
 
         // Event listeners for Like and Dislike buttons
-        likeButton.addEventListener("click", function () {
+        likeButton.addEventListener("click", function (event) {
+          event.preventDefault();
           const cocktailId = cocktailDiv.dataset.cocktailId; // Retrieve cocktailId
           likes++;
           likeCount.textContent = likes; // Update the like count in the DOM
@@ -194,7 +105,8 @@ document.addEventListener("DOMContentLoaded", function () {
           updateLikes(cocktailId, likes); // Call updateLikes with cocktailId
         });
 
-        dislikeButton.addEventListener("click", function () {
+        dislikeButton.addEventListener("click", function (event) {
+          event.preventDefault();
           const cocktailId = cocktailDiv.dataset.cocktailId; // Retrieve cocktailId
           dislikes++;
           dislikeCount.textContent = dislikes;
