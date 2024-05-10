@@ -1,3 +1,4 @@
+// Event listener 1 -> filter-input
 document.addEventListener("DOMContentLoaded", function () {
   const filterInput = document.getElementById("filter-input");
 
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     filterCocktails(this.value.trim());
   });
 
-  //////////////////////////////////////////////////////////////////////////
+  /// Fetch cocktails from server
   fetch("http://localhost:3000/drinks")
     .then((res) => res.json())
     .then((drinks) => {
@@ -76,6 +77,31 @@ document.addEventListener("DOMContentLoaded", function () {
         const cocktailInstructionsP = document.createElement("p");
         cocktailInstructionsP.textContent = item.strInstructions;
 
+        // Like and Dislike buttons
+        const likeButton = document.createElement("button");
+        likeButton.textContent = "👍";
+        const dislikeButton = document.createElement("button");
+        dislikeButton.textContent = "👎";
+
+        // Like and Dislike counts
+        let likes = 0;
+        let dislikes = 0;
+        const likeCount = document.createElement("span");
+        const dislikeCount = document.createElement("span");
+        likeCount.textContent = likes;
+        dislikeCount.textContent = dislikes;
+
+        // Event listeners for Like and Dislike buttons
+        likeButton.addEventListener("click", function () {
+          likes++;
+          likeCount.textContent = likes;
+        });
+
+        dislikeButton.addEventListener("click", function () {
+          dislikes++;
+          dislikeCount.textContent = dislikes;
+        });
+
         // Append child elements to cocktailDiv
         cocktailDiv.append(
           cocktailImg,
@@ -83,7 +109,11 @@ document.addEventListener("DOMContentLoaded", function () {
           cocktailGlassP,
           cocktailIngredientsP,
           cocktailMeasuresP,
-          cocktailInstructionsP
+          cocktailInstructionsP,
+          likeButton,
+          likeCount,
+          dislikeButton,
+          dislikeCount
         );
 
         cocktailContainerDiv.appendChild(cocktailDiv); // Append cocktailDiv to container div
@@ -91,6 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Event listener 1 -> submit
 document
   .getElementById("create-cocktail-form")
   .addEventListener("submit", function (event) {
