@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /// Fetch cocktails from server
+
   fetch("http://localhost:3000/drinks")
     .then((res) => res.json())
     .then((drinks) => {
@@ -111,23 +112,6 @@ document.addEventListener("DOMContentLoaded", function () {
           updateDislikes(cocktailId, dislikes); // Call updateDislikes with cocktailId
         });
 
-        // function updateLikes(cocktailId, likes) {
-        //   // Send a PUT request to update likes count for the cocktail with the given ID
-        //   fetch(`http://localhost:3000/drinks/${cocktailId}`, {
-        //     method: "PUT",
-        //     headers: {
-        //       "Content-Type": "application/json",
-        //     },
-        //     body: JSON.stringify({ likes }),
-        //   })
-        //     .then((response) => response.json())
-        //     .then((data) => {
-        //       console.log("Likes updated:", data);
-        //     })
-        //     .catch((error) => {
-        //       console.error("Error updating likes:", error);
-        //     });
-        // }
         function updateLikes(cocktailId, likes) {
           // Fetch the existing cocktail data
           fetch(`http://localhost:3000/drinks/${cocktailId}`)
@@ -157,23 +141,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-        // function updateDislikes(cocktailId, dislikes) {
-        //   // Send a PUT request to update dislikes count for the cocktail with the given ID
-        //   fetch(`http://localhost:3000/drinks/${cocktailId}`, {
-        //     method: "PUT",
-        //     headers: {
-        //       "Content-Type": "application/json",
-        //     },
-        //     body: JSON.stringify({ dislikes }),
-        //   })
-        //     .then((response) => response.json())
-        //     .then((data) => {
-        //       console.log("Dislikes updated:", data);
-        //     })
-        //     .catch((error) => {
-        //       console.error("Error updating dislikes:", error);
-        //     });
-        // }
         function updateDislikes(cocktailId, dislikes) {
           // Fetch the existing cocktail data
           fetch(`http://localhost:3000/drinks/${cocktailId}`)
@@ -202,6 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
               console.error("Error fetching cocktail data:", error);
             });
         }
+
         // APPEND CHILD ELEMENTS TO COCKTAIL DIV //
         cocktailDiv.append(
           cocktailImg,
