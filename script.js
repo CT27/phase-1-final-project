@@ -1,4 +1,4 @@
-// Event listener 1 -> filter-input
+// Event listener 1 -> "filter-input"
 document.addEventListener("DOMContentLoaded", function () {
   const filterInput = document.getElementById("filter-input");
 
@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
       drinks.forEach((item) => {
         const cocktailDiv = document.createElement("div");
         cocktailDiv.classList.add("cocktail"); // Add class to identify cocktail
+        cocktailDiv.dataset.cocktailId = item.id; // Add cocktailId as a data attribute
 
         const cocktailImg = document.createElement("img");
         cocktailImg.src = item.strDrinkThumb;
@@ -77,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const cocktailInstructionsP = document.createElement("p");
         cocktailInstructionsP.textContent = item.strInstructions;
 
+        /// EVENT LISTENER 2 -> "CLICK"
         // Like and Dislike buttons
         const likeButton = document.createElement("button");
         likeButton.textContent = "👍";
@@ -93,16 +95,114 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Event listeners for Like and Dislike buttons
         likeButton.addEventListener("click", function () {
+          const cocktailId = cocktailDiv.dataset.cocktailId; // Retrieve cocktailId
           likes++;
-          likeCount.textContent = likes;
+          likeCount.textContent = likes; // Update the like count in the DOM
+          // Send request to update backend
+          updateLikes(cocktailId, likes); // Call updateLikes with cocktailId
         });
 
         dislikeButton.addEventListener("click", function () {
+          const cocktailId = cocktailDiv.dataset.cocktailId; // Retrieve cocktailId
           dislikes++;
           dislikeCount.textContent = dislikes;
+
+          // Send request to update backend
+          updateDislikes(cocktailId, dislikes); // Call updateDislikes with cocktailId
         });
 
-        // Append child elements to cocktailDiv
+        // function updateLikes(cocktailId, likes) {
+        //   // Send a PUT request to update likes count for the cocktail with the given ID
+        //   fetch(`http://localhost:3000/drinks/${cocktailId}`, {
+        //     method: "PUT",
+        //     headers: {
+        //       "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify({ likes }),
+        //   })
+        //     .then((response) => response.json())
+        //     .then((data) => {
+        //       console.log("Likes updated:", data);
+        //     })
+        //     .catch((error) => {
+        //       console.error("Error updating likes:", error);
+        //     });
+        // }
+        function updateLikes(cocktailId, likes) {
+          // Fetch the existing cocktail data
+          fetch(`http://localhost:3000/drinks/${cocktailId}`)
+            .then((response) => response.json())
+            .then((cocktail) => {
+              // Update the likes count
+              cocktail.likes = likes;
+
+              // Send a PUT request to update the entire cocktail object
+              fetch(`http://localhost:3000/drinks/${cocktailId}`, {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(cocktail), // Send the entire updated cocktail object
+              })
+                .then((response) => response.json())
+                .then((data) => {
+                  console.log("Likes updated:", data);
+                })
+                .catch((error) => {
+                  console.error("Error updating likes:", error);
+                });
+            })
+            .catch((error) => {
+              console.error("Error fetching cocktail data:", error);
+            });
+        }
+
+        // function updateDislikes(cocktailId, dislikes) {
+        //   // Send a PUT request to update dislikes count for the cocktail with the given ID
+        //   fetch(`http://localhost:3000/drinks/${cocktailId}`, {
+        //     method: "PUT",
+        //     headers: {
+        //       "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify({ dislikes }),
+        //   })
+        //     .then((response) => response.json())
+        //     .then((data) => {
+        //       console.log("Dislikes updated:", data);
+        //     })
+        //     .catch((error) => {
+        //       console.error("Error updating dislikes:", error);
+        //     });
+        // }
+        function updateDislikes(cocktailId, dislikes) {
+          // Fetch the existing cocktail data
+          fetch(`http://localhost:3000/drinks/${cocktailId}`)
+            .then((response) => response.json())
+            .then((cocktail) => {
+              // Update the dislikes count
+              cocktail.dislikes = dislikes;
+
+              // Send a PUT request to update the entire cocktail object
+              fetch(`http://localhost:3000/drinks/${cocktailId}`, {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(cocktail), // Send the entire updated cocktail object
+              })
+                .then((response) => response.json())
+                .then((data) => {
+                  console.log("Dislikes updated:", data);
+                })
+                .catch((error) => {
+                  console.error("Error updating dislikes:", error);
+                });
+            })
+            .catch((error) => {
+              console.error("Error fetching cocktail data:", error);
+            });
+        }
+        // APPEND CHILD ELEMENTS TO COCKTAIL DIV //
         cocktailDiv.append(
           cocktailImg,
           cocktailNameP,
@@ -121,7 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Event listener 1 -> submit
+// EVENT LISTENER 3 ->"SUBMIT"//
 document
   .getElementById("create-cocktail-form")
   .addEventListener("submit", function (event) {

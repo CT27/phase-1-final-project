@@ -42,6 +42,8 @@
       "strMeasure13": null,
       "strMeasure14": null,
       "strMeasure15": null,
+      "likes": 1,
+      "dislikes": 1,
       "strImageSource": "https://commons.wikimedia.org/wiki/File:Klassiche_Margarita.jpg",
       "strImageAttribution": "Cocktailmarler",
       "strCreativeCommonsConfirmed": "Yes",
@@ -89,6 +91,8 @@
       "strMeasure13": null,
       "strMeasure14": null,
       "strMeasure15": null,
+      "likes": 0,
+      "dislikes": 0,
       "strImageSource": "https://www.thecocktaildb.com/images/media/drink/upgsue1668419912.jpg",
       "strImageAttribution": "TheCocktailDB",
       "strCreativeCommonsConfirmed": "Yes",
@@ -136,6 +140,8 @@
       "strMeasure13": null,
       "strMeasure14": null,
       "strMeasure15": null,
+      "likes": 0,
+      "dislikes": 0,
       "strImageSource": null,
       "strImageAttribution": null,
       "strCreativeCommonsConfirmed": "No",
@@ -183,6 +189,8 @@
       "strMeasure13": null,
       "strMeasure14": null,
       "strMeasure15": null,
+      "likes": 0,
+      "dislikes": 0,
       "strImageSource": "https://pixabay.com/photos/cocktail-mojito-cocktail-recipe-5096281/",
       "strImageAttribution": "anilaha https://pixabay.com/users/anilaha-16242978/",
       "strCreativeCommonsConfirmed": "Yes",
@@ -230,6 +238,8 @@
       "strMeasure13": null,
       "strMeasure14": null,
       "strMeasure15": null,
+      "likes": 0,
+      "dislikes": 0,
       "strImageSource": "https://commons.wikimedia.org/wiki/File:15-09-26-RalfR-WLC-0191.jpg",
       "strImageAttribution": "Ralf Roletschek https://www.wikidata.org/wiki/Q15080600",
       "strCreativeCommonsConfirmed": "Yes",
@@ -277,6 +287,8 @@
       "strMeasure13": null,
       "strMeasure14": null,
       "strMeasure15": null,
+      "likes": 0,
+      "dislikes": 0,
       "strImageSource": "https://commons.wikimedia.org/wiki/File:15-09-26-RalfR-WLC-0032.jpg",
       "strImageAttribution": null,
       "strCreativeCommonsConfirmed": "Yes",
@@ -291,7 +303,9 @@
       "strIngredient1": "Tequila",
       "strIngredient2": "Orange juice",
       "strIngredient3": "Triple sec",
-      "strMeasure1": "2 measures"
+      "strMeasure1": "2 measures",
+      "likes": 0,
+      "dislikes": 0
     },
     {
       "id": "b1e1",
@@ -310,9 +324,10 @@
       "strMeasure3": "1 dash",
       "strMeasure4": "1/2 tsp",
       "strMeasure5": "1-2 drops",
-      "strMeasure6": "wedge"
+      "strMeasure6": "wedge",
+      "likes": 0,
+      "dislikes": 0
     }
-    
   ],
   "ratings": []
 }
