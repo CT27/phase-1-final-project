@@ -26,69 +26,67 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch("http://localhost:3000/drinks")
     .then((res) => res.json())
     .then((drinks) => {
+      const cocktailContainerDiv = document.querySelector(".cocktails");
       drinks.forEach((item) => {
-        const cocktailContainerDiv = document.querySelector(".cocktails");
-        drinks.forEach((item) => {
-          const cocktailDiv = document.createElement("div");
-          cocktailDiv.classList.add("cocktail"); // Add class to identify cocktail
+        const cocktailDiv = document.createElement("div");
+        cocktailDiv.classList.add("cocktail"); // Add class to identify cocktail
 
-          const cocktailImg = document.createElement("img");
-          cocktailImg.src = item.strDrinkThumb;
-          cocktailImg.classList.add("cocktail-image");
+        const cocktailImg = document.createElement("img");
+        cocktailImg.src = item.strDrinkThumb;
+        cocktailImg.classList.add("cocktail-image");
 
-          const cocktailNameP = document.createElement("p");
-          cocktailNameP.textContent = item.strDrink;
-          cocktailNameP.classList.add("name-size");
+        const cocktailNameP = document.createElement("p");
+        cocktailNameP.textContent = item.strDrink;
+        cocktailNameP.classList.add("name-size");
 
-          const cocktailGlassP = document.createElement("p");
-          cocktailGlassP.textContent = item.strGlass;
+        const cocktailGlassP = document.createElement("p");
+        cocktailGlassP.textContent = item.strGlass;
 
-          const cocktailIngredientsP = document.createElement("p");
-          // Join all ingredients into a string separated by ", "
-          const ingredients = [];
+        const cocktailIngredientsP = document.createElement("p");
+        // Join all ingredients into a string separated by ", "
+        const ingredients = [];
 
-          for (let i = 1; i <= 15; i++) {
-            const ingredient = item["strIngredient" + i];
-            if (ingredient) {
-              ingredients.push(ingredient);
-            } else {
-              break;
-            }
+        for (let i = 1; i <= 15; i++) {
+          const ingredient = item["strIngredient" + i];
+          if (ingredient) {
+            ingredients.push(ingredient);
+          } else {
+            break;
           }
+        }
 
-          cocktailIngredientsP.textContent =
-            "Ingredients: " + ingredients.join(", ");
-          cocktailIngredientsP.classList.add("cocktail-ingredients"); // Add class for filtering
+        cocktailIngredientsP.textContent =
+          "Ingredients: " + ingredients.join(", ");
+        cocktailIngredientsP.classList.add("cocktail-ingredients"); // Add class for filtering
 
-          const cocktailMeasuresP = document.createElement("p");
+        const cocktailMeasuresP = document.createElement("p");
 
-          let measureList = "";
-          for (let i = 1; i <= 15; i++) {
-            const measure = item["strMeasure" + i];
-            if (measure) {
-              measureList += measure + ", ";
-            } else {
-              break;
-            }
+        let measureList = "";
+        for (let i = 1; i <= 15; i++) {
+          const measure = item["strMeasure" + i];
+          if (measure) {
+            measureList += measure + ", ";
+          } else {
+            break;
           }
-          measureList = measureList.slice(0, -2);
-          cocktailMeasuresP.textContent = "Measure: " + measureList;
+        }
+        measureList = measureList.slice(0, -2);
+        cocktailMeasuresP.textContent = "Measure: " + measureList;
 
-          const cocktailInstructionsP = document.createElement("p");
-          cocktailInstructionsP.textContent = item.strInstructions;
+        const cocktailInstructionsP = document.createElement("p");
+        cocktailInstructionsP.textContent = item.strInstructions;
 
-          // Append child elements inside the loop
-          cocktailDiv.append(
-            cocktailImg,
-            cocktailNameP,
-            cocktailGlassP,
-            cocktailIngredientsP,
-            cocktailMeasuresP,
-            cocktailInstructionsP
-          );
+        // Append child elements to cocktailDiv
+        cocktailDiv.append(
+          cocktailImg,
+          cocktailNameP,
+          cocktailGlassP,
+          cocktailIngredientsP,
+          cocktailMeasuresP,
+          cocktailInstructionsP
+        );
 
-          cocktailContainerDiv.appendChild(cocktailDiv); // Append cocktailDiv to container div
-        });
+        cocktailContainerDiv.appendChild(cocktailDiv); // Append cocktailDiv to container div
       });
     });
 });
