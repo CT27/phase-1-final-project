@@ -1,7 +1,7 @@
 
 html {
     background-image: url(/images/zebra.jpeg);
-    background-size: cover; /* Ensure the background image covers the entire viewport */
+    /* background-size: cover; Ensure the background image covers the entire viewport */
 }
 
 body {
