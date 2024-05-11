@@ -1,6 +1,6 @@
 ## My phase 1 final project
 
-Project Status: this is a project for a software engineering course, it is beginner in nature and has further development required before it is complete.
+Project Status: this is a project for a software engineering course, it is a beginner project in nature and has further development required before it is complete. the backend is a json server hosted on render using node as the runtime.
 
 # Name:
 
@@ -8,7 +8,7 @@ Candy T's Cocktails - cocktail database, add, rate, filter.
 
 # Description
 
-This is a database hosted on json server, it allows the user to
+This is a database hosted on json server via render, it allows the user to:
 -enter submit cocktails to the database\*
 users can enter a name, an img link ingredients, measures and also instructions to the database.
 -to filter by ingredient
