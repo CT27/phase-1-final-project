@@ -53,9 +53,9 @@ div.cocktails div {
 }
 
 .cocktail-image {
-    width:10em;
-    height: 10em;
-    display: block;
+    width:13em;
+    height: 13em;
+    display:block;
 }
 
 div.cocktail-form {
