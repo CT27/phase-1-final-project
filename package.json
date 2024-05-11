@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "json-server": "^1.0.0-alpha.23"
+    "json-server": "^1.0.0-alpha.23",
+    "yarn": "^1.22.22"
   },
   "name": "phase-1-final-project",
   "description": "My phase 1 final project",
@@ -10,5 +11,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "scripts": {
+    "start": "node server.js"
+  }
+  
 }
