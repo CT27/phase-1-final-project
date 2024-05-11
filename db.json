@@ -42,7 +42,7 @@
       "strMeasure13": null,
       "strMeasure14": null,
       "strMeasure15": null,
-      "likes": 4,
+      "likes": 5,
       "dislikes": 4,
       "strImageSource": "https://commons.wikimedia.org/wiki/File:Klassiche_Margarita.jpg",
       "strImageAttribution": "Cocktailmarler",
@@ -92,7 +92,7 @@
       "strMeasure14": null,
       "strMeasure15": null,
       "likes": 5,
-      "dislikes": 2,
+      "dislikes": 3,
       "strImageSource": "https://www.thecocktaildb.com/images/media/drink/upgsue1668419912.jpg",
       "strImageAttribution": "TheCocktailDB",
       "strCreativeCommonsConfirmed": "Yes",
@@ -140,7 +140,7 @@
       "strMeasure13": null,
       "strMeasure14": null,
       "strMeasure15": null,
-      "likes": 0,
+      "likes": 3,
       "dislikes": 1,
       "strImageSource": null,
       "strImageAttribution": null,
@@ -239,7 +239,7 @@
       "strMeasure14": null,
       "strMeasure15": null,
       "likes": 1,
-      "dislikes": 0,
+      "dislikes": 3,
       "strImageSource": "https://commons.wikimedia.org/wiki/File:15-09-26-RalfR-WLC-0191.jpg",
       "strImageAttribution": "Ralf Roletschek https://www.wikidata.org/wiki/Q15080600",
       "strCreativeCommonsConfirmed": "Yes",
@@ -305,7 +305,7 @@
       "strIngredient3": "Triple sec",
       "strMeasure1": "2 measures",
       "likes": 2,
-      "dislikes": 1
+      "dislikes": 3
     },
     {
       "id": "b1e1",
@@ -326,7 +326,7 @@
       "strMeasure5": "1-2 drops",
       "strMeasure6": "wedge",
       "likes": 2,
-      "dislikes": 0
+      "dislikes": 1
     }
   ],
   "ratings": []

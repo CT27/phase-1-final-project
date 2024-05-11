@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /// Fetch cocktails from server
-  fetch("http://localhost:3000/drinks")
+  fetch("https://json-server-template-drj5.onrender.com/drinks")
     .then((res) => res.json())
     .then((drinks) => {
       const cocktailContainerDiv = document.querySelector(".cocktails");
@@ -116,13 +116,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function updateLikes(cocktailId, likes) {
           // Fetch the existing cocktail data
-          fetch(`http://localhost:3000/drinks/${cocktailId}`, {
-            method: "PATCH", // Use PATCH method to update specific fields
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ likes }), // Send only the updated likes count
-          })
+          fetch(
+            `https://json-server-template-drj5.onrender.com/drinks/${cocktailId}`,
+            {
+              method: "PATCH", // Use PATCH method to update specific fields
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ likes }), // Send only the updated likes count
+            }
+          )
             .then((response) => response.json())
             .then((data) => {
               console.log("Likes updated:", data);
@@ -134,13 +137,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function updateDislikes(cocktailId, dislikes) {
           // Fetch the existing cocktail data
-          fetch(`http://localhost:3000/drinks/${cocktailId}`, {
-            method: "PATCH", // Use PATCH method to update specific fields
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ dislikes }), // Send only the updated dislikes count
-          })
+          fetch(
+            `https://json-server-template-drj5.onrender.com/drinks/${cocktailId}`,
+            {
+              method: "PATCH", // Use PATCH method to update specific fields
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ dislikes }), // Send only the updated dislikes count
+            }
+          )
             .then((response) => response.json())
             .then((data) => {
               console.log("Dislikes updated:", data);
@@ -200,7 +206,7 @@ document
     };
 
     // send POST request
-    fetch("http://localhost:3000/drinks", {
+    fetch("https://json-server-template-drj5.onrender.com/drinks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
