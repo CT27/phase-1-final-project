@@ -218,15 +218,31 @@ document
     event.preventDefault(); // prevent the form from submitting normally
 
     // collect form data
+    // const formData = {
+    //   cocktailName: document.getElementById("cocktail-name").value,
+    //   cocktailGlass: document.getElementById("cocktail-glass").value,
+    //   cocktailIngredients: document.getElementById("cocktail-ingredients")
+    //     .value,
+    //   cocktailMeasures: document.getElementById("cocktail-measures").value,
+    //   cocktailInstructions: document.getElementById("cocktail-instructions")
+    //     .value,
+    //   cocktailImage: document.getElementById("cocktail-image").value,
+
+    //   strDrink: document.getElementById("cocktail-name").value,
+    //   strGlass: document.getElementById("cocktail-glass").value,
+    //   strIngredients: document
+    //     .getElementById("cocktail-ingredients")
+    //     .value.split(",")
+    //     .map((item) => item.trim()),
+    //   strMeasures: document
+    //     .getElementById("cocktail-measures")
+    //     .value.split(",")
+    //     .map((item) => item.trim()),
+    //   strInstructions: document.getElementById("cocktail-instructions").value,
+    //   strDrinkThumb: document.getElementById("cocktail-image").value,
+    // };
+
     const formData = {
-      cocktailName: document.getElementById("cocktail-name").value,
-      cocktailGlass: document.getElementById("cocktail-glass").value,
-      cocktailIngredients: document.getElementById("cocktail-ingredients")
-        .value,
-      cocktailMeasures: document.getElementById("cocktail-measures").value,
-      cocktailInstructions: document.getElementById("cocktail-instructions")
-        .value,
-      cocktailImage: document.getElementById("cocktail-image").value,
       strDrink: document.getElementById("cocktail-name").value,
       strGlass: document.getElementById("cocktail-glass").value,
       strIngredients: document
@@ -237,9 +253,32 @@ document
         .getElementById("cocktail-measures")
         .value.split(",")
         .map((item) => item.trim()),
+      // strIngredients: document.getElementById('cocktail-ingredients').value.split(',').map(item => item.trim()),
+      // strMeasures: document.getElementById('cocktail-measures').value.split(',').map(item => item.trim()),
       strInstructions: document.getElementById("cocktail-instructions").value,
       strDrinkThumb: document.getElementById("cocktail-image").value,
     };
+    // Splitting ingredients and measures
+    const ingredients = document
+      .getElementById("cocktail-ingredients")
+      .value.split(",")
+      .map((item) => item.trim());
+    const measures = document
+      .getElementById("cocktail-measures")
+      .value.split(",")
+      .map((item) => item.trim());
+
+    // Adding ingredients to formData
+    ingredients.forEach((ingredient, index) => {
+      const ingredientKey = `strIngredient${index + 1}`;
+      formData[ingredientKey] = ingredient;
+    });
+
+    // Adding measures to formData
+    measures.forEach((measure, index) => {
+      const measureKey = `strMeasure${index + 1}`;
+      formData[measureKey] = measure;
+    });
 
     // send POST request
     fetch("https://json-server-template-drj5.onrender.com/drinks", {
