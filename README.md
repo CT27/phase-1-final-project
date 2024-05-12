@@ -1,15 +1,15 @@
 ## My phase 1 final project
 
-Project Status: this is a project for a software engineering course, it is a beginner project in nature and has further development required before it is complete. the backend is a json server hosted on render using node as the runtime.
+Project Status: this is a project for a software engineering course, it is a beginner project in nature and has further development required before it is complete. the backend is a json server hosted on render using node as the runtime. It was to demonstrate the functionality of event listeners, working with API's, Javascript, CSS & HTML.
 
 # Name:
 
-Candy T's Cocktails - cocktail database, add, rate, filter.
+Candy T's Cocktails - cocktail catalogue, add, rate, filter.
 
 # Description
 
 This is a database hosted on json server via render, it allows the user to:
--enter submit cocktails to the database\*
+-enter submit cocktails to the catalogue\*
 users can enter a name, an img link ingredients, measures and also instructions to the database.
 -to filter by ingredient
 -to like or dislike the cocktails.
@@ -19,6 +19,7 @@ users can enter a name, an img link ingredients, measures and also instructions 
 # Installation
 
 -runtime: Node version 20.12.2 (default)
+-json-server --watch db.json
 
 # Support
 
@@ -30,15 +31,19 @@ in future releases - a login and password requirement will be added, option to e
 
 # Contributing
 
-This is a project for course work contributions are welcome.
+This is a project for course work contributions are welcome,
 
 # contributors to the project:
 
+with thanks to the Cocktail Db for the free public api.
 https://apilist.fun/api/the-cocktail-db
 
 # License
 
-For open source projects, say how it is licensed.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License
+
+Copyright (c) 2024 CT27
 
 # Project Status:
 
