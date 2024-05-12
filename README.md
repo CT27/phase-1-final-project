@@ -1,6 +1,6 @@
 ## My phase 1 final project
 
-Project Status: this is a project for a software engineering course, it is a beginner project in nature and has further development required before it is complete. the backend is a json server hosted on render using node as the runtime. It was to demonstrate the functionality of event listeners, working with API's, Javascript, CSS & HTML.
+Project Status: this is a project for a software engineering course, it is a beginner project in nature and has further development required before it is complete. the backend is a json server hosted on render using node as the runtime. It was to demonstrate the functionality of event listeners, working with API's, Javascript, CSS & HTML. It is a light hearted bit of code with the intent on demonstrating very basic javscript skills.
 
 # Name:
 
@@ -19,6 +19,8 @@ users can enter a name, an img link ingredients, measures and also instructions 
 # Installation
 
 -runtime: Node version 20.12.2 (default)
+-npm install json server (if you want to use the db.json file locally)
+-you will need to update the urls in the script.js file as currently they point to a render web services url.
 -json-server --watch db.json
 
 # Support
