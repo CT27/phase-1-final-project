@@ -14,7 +14,7 @@ users can enter a name, an img link ingredients, measures and also instructions 
 -to filter by ingredient
 -to like or dislike the cocktails.
 
-\*The submission functionality is not complete as the opportunity to edit submissions has not been built yet. This means mistakes cannot easily be corrected, for any corrections please email "corrections@candytcocktails.com", there is also no functionality to avoid duplicate drinks being entered to the database, or any rules around unitos of measurement. As the boxes are all free text boxes the opportunity exists for random text to be entered.
+\*The submission functionality is not complete as the opportunity to edit submissions has not been built yet. This means mistakes cannot easily be corrected, for any corrections please email "corrections@candytcocktails.com", there is also no functionality to avoid duplicate drinks being entered to the database, or any rules around units of measurement. As the boxes are all free text boxes the opportunity exists for random text to be entered.
 
 # Installation
 
