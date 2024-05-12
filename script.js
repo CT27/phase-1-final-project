@@ -156,6 +156,41 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
+        // Delete button
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "❌";
+        deleteButton.addEventListener("click", function (event) {
+          event.preventDefault();
+          const cocktailId = cocktailDiv.dataset.cocktailId;
+          // Show confirmation dialog
+          if (confirm("Are you sure you want to delete this cocktail?")) {
+            // If user confirms, proceed with deletion
+            // Send request to delete cocktail from the server
+            deleteCocktail(cocktailId);
+            // Remove the cocktail from the DOM
+            cocktailDiv.remove();
+          }
+        });
+
+        function deleteCocktail(cocktailId) {
+          // Send request to delete cocktail from the server
+          fetch(
+            `https://json-server-template-drj5.onrender.com/drinks/${cocktailId}`,
+            {
+              method: "DELETE",
+            }
+          )
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("Failed to delete cocktail");
+              }
+              console.log("Cocktail deleted successfully");
+            })
+            .catch((error) => {
+              console.error("Error deleting cocktail:", error);
+            });
+        }
+
         // APPEND CHILD ELEMENTS TO COCKTAIL DIV //
         cocktailDiv.append(
           cocktailImg,
@@ -167,7 +202,8 @@ document.addEventListener("DOMContentLoaded", function () {
           likeButton,
           likeCount,
           dislikeButton,
-          dislikeCount
+          dislikeCount,
+          deleteButton
         );
 
         cocktailContainerDiv.appendChild(cocktailDiv); // Append cocktailDiv to container div

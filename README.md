@@ -13,8 +13,9 @@ This is a database hosted on json server via render, it allows the user to:
 users can enter a name, an img link ingredients, measures and also instructions to the database.
 -to filter by ingredient
 -to like or dislike the cocktails.
+-to delete cocktails if entered incorrectly
 
-\*The submission functionality is not complete as the opportunity to edit submissions has not been built yet. This means mistakes cannot easily be corrected, for any corrections please email "corrections@candytcocktails.com", there is also no functionality to avoid duplicate drinks being entered to the database, or any rules around units of measurement. As the boxes are all free text boxes the opportunity exists for random text to be entered.
+\*The submission functionality is not complete as the opportunity to edit submissions has not been built yet (only delete) This means mistakes cannot easily be corrected without deletinng the cocktail entered, for any queries please email "corrections@candytcocktails.com", there is also no functionality to avoid duplicate drinks being entered to the database, or any rules around units of measurement. As the boxes are all free text boxes the opportunity exists for random text to be entered.
 
 # Installation
 
